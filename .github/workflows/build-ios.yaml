@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - main
+      - build-deploy-ios
+
+name: Build and Release Apps
+jobs:
+  build:
+    name: Build Apps
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Setup Ruby 2.6
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - name: Install Ruby Dependencies
+        working-directory: ./ios
+        run: bundle install
+      - name: Create Secrets
+        run: |
+          mkdir -p keys/ios
+          echo "$GOOGLE_SERVICES_PLIST" >> ios/Runner/GoogleServices-Info.plist
+        shell: bash
+        env:
+          GOOGLE_SERVICES: ${{secrets.GOOGLE_SERVICES_PLIST}}
+      - name: Fastlane Build & Release
+        working-directory: ./ios
+        run: bundle exec fastlane beta
+
+
