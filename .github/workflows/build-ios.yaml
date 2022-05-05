@@ -27,15 +27,15 @@ jobs:
       - name: Create Secrets
         run: |
           mkdir -p keys/ios
-          echo "$GOOGLE_CLOUD_KEYS" >> ios/gc_keys.json
+          echo "$GOOGLE_CLOUD_KEY" >> ios/gc_keys.json
           echo "$GOOGLE_SERVICES_PLIST" >> ios/Runner/GoogleServices-Info.plist
         shell: bash
         env:
-          GOOGLE_CLOUD_KEYS: ${{secrets.GOOGLE_CLOUD_KEYS}}
+          GOOGLE_CLOUD_KEYS: ${{secrets.GOOGLE_CLOUD_KEY}}
           GOOGLE_SERVICES: ${{secrets.GOOGLE_SERVICES_PLIST}}
       - name: Match Certs
         working-directory: ./ios
-        run: bundle exec fastlane match development
+        run: bundle exec fastlane match development --readonly
       - name: Fastlane Build & Release
         working-directory: ./ios
         run: bundle exec fastlane beta
