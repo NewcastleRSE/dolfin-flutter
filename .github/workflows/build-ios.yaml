@@ -33,6 +33,10 @@ jobs:
         env:
           GOOGLE_CLOUD_KEYS: ${{secrets.GOOGLE_CLOUD_KEY}}
           GOOGLE_SERVICES: ${{secrets.GOOGLE_SERVICES_PLIST}}
+      - name: Echo Secrets
+        working-directory: ./ios
+        run: cat gc_keys.json
+        shell: bash
       - name: Match Certs
         working-directory: ./ios
         run: bundle exec fastlane match development --readonly
