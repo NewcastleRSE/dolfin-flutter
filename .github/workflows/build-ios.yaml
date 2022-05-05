@@ -27,9 +27,11 @@ jobs:
       - name: Create Secrets
         run: |
           mkdir -p keys/ios
+          echo "$GOOGLE_CLOUD_KEYS" >> gc_keys.json
           echo "$GOOGLE_SERVICES_PLIST" >> ios/Runner/GoogleServices-Info.plist
         shell: bash
         env:
+          GOOGLE_CLOUD_KEYS: ${{secrets.GOOGLE_CLOUD_KEYS}}
           GOOGLE_SERVICES: ${{secrets.GOOGLE_SERVICES_PLIST}}
       - name: Fastlane Build & Release
         working-directory: ./ios
