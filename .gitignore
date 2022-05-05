@@ -74,6 +74,7 @@ app.*.map.json
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+ios/Runner/GoogleService-Info.plist
 **/ios/Runner.app.*
 **/ios/Runner.ipa
 
