@@ -31,11 +31,11 @@ jobs:
           echo "$GOOGLE_SERVICES_PLIST" >> ios/Runner/GoogleServices-Info.plist
         shell: bash
         env:
-          GOOGLE_CLOUD_KEYS: ${{secrets.GOOGLE_CLOUD_KEY}}
+          GOOGLE_CLOUD_KEY: ${{secrets.GOOGLE_CLOUD_KEY}}
           GOOGLE_SERVICES: ${{secrets.GOOGLE_SERVICES_PLIST}}
       - name: Echo Secrets
         working-directory: ./ios
-        run: cat gc_keys.json
+        run: ls
         shell: bash
       - name: Match Certs
         working-directory: ./ios
