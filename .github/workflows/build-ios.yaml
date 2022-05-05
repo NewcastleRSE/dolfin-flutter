@@ -8,7 +8,7 @@ name: Build and Release Apps
 jobs:
   build:
     name: Build Apps
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
