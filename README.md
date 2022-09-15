@@ -3,7 +3,7 @@ The Flutter-based app for the DOLFIN Project
 
 ## About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin ante at eleifend eleifend. Sed non vestibulum nisi. Aliquam vel condimentum quam. Donec fringilla et purus at auctor. Praesent euismod vitae metus non consectetur. 
+Andoird and iOS app for parents participating in the DOLFIN study. This research aims to understand how a nutritional supplement can improve long term congnitive development in baies who are born very early or who experience poor blood supply at birth. Parents can use the app to report the supplement dosing, their baby's weight and any unplanned hospital admissions. The app is backed by a Google Firebase setup including a Firestore database and Cloud Messaging. Parents also receive push notifications to remind them to give the supplement. 
 
 ### Project Team
 **PI(s):** [Jeremy Parr](https://research.ncl.ac.uk/neurodisability/theteam/jeremyparr/)  
@@ -87,4 +87,4 @@ flutter pub run flutter_launcher_icons:main
 - [ ] Testing
 
 ## Acknowledgements
-This work was funded by a grant from the UK Research Councils, EPSRC grant ref. EP/L012345/1, “Example project title, please update”.
+This work was funded by the NIHR, and managed by the National Perinatal Epidemiology Unit, Clinical Trials Unit (NPEU CTU) at the University of Oxford and sponsored by The Newcastle upon Tyne Hospitals NHS Foundation Trust.
