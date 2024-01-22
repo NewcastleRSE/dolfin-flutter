@@ -153,15 +153,15 @@ Run the iOS App for the first time
 ### Building the iOS app to the App Store
 
 ```
-fastlane match development
-fastlane match appstore
-pod install
-bundle install
+# fastlane match development
+# fastlane match appstore
+# pod install
+# bundle install
 flutter build ipa
-bundle exec fastlane beta
+# bundle exec fastlane beta
 ```
 
-### Regenerating the Icons (not sure if needed)
+### Regenerating the Icons (not needed unless there is an error)
 The base icon image is specified in `pubspec.yaml` and the relevant dependencies should be installed automatically.
 To regenerate the icons (for Android and iOS), edit the master image file and then use the following commands:
 
