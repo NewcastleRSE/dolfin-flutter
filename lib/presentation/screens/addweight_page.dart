@@ -311,8 +311,8 @@ class _AddWeightPageState extends State<AddWeightPage> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Did you forget to add the supplement?"),
-          content: Text("If not, enter indicate it via 0."),
+          title: Text("Please enter the number of scoops of supplement."),
+          content: Text("If you are not giving any supplement to your baby at the moment, please enter 0."),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
