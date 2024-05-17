@@ -17,18 +17,19 @@ In babies who are born very early or who suffer poor blood supply or lack of oxy
 ### The NPEU team have access to the Firebase database using a service account with a private key. This expires around the beginning of June annually. NPEU will give us  a new public key and we upload this to the service account through the Google console. 
 
 ### Project Team
-**PI(s):** [Jeremy Parr](https://research.ncl.ac.uk/neurodisability/theteam/jeremyparr/)  
-**RSE(s):** 
+**PI:** [Jeremy Parr](https://research.ncl.ac.uk/neurodisability/theteam/jeremyparr/)  
+**RSEs:** 
+* [Imre Draskovits](https://rse.ncldata.dev/team/imre-draskovits) [(@notimre)](https://github.com/notimre)
 * [Mike Simpson](https://rse.ncldata.dev/team/mike-simpson) [(@mdsimpson42)](https://github.com/mdsimpson42) 
 * [Kate Court](https://rse.ncldata.dev/team/kate-court) [(@KateCourt)](https://github.com/KateCourt) 
 * [Mark Turner](https://rse.ncldata.dev/team/mark-turner) [(@markdturner)](https://github.com/markdturner)
-* [Imre Draskovits](https://rse.ncldata.dev/team/imre-draskovits) [(@notimre)](https://github.com/notimre)
 
 ## Project Structure
 
-- [doflin-flutter](https://github.com/NewcastleRSE/dolfin-flutter/): This repository (left side of the diagram)
-- [dolfin-development](https://github.com/NewcastleRSE/dolfin-flutter-development) [DEPRECATED]: This is now included in this repository (right side of the diagram)
-- [dolfin-firebase](https://github.com/NewcastleRSE/dolfin-firebase): Includes Firebase Cloud Funcitons, Push Notifications and Database (top of the diagram)
+- [doflin-flutter](https://github.com/NewcastleRSE/dolfin-flutter/): Production repository (left side of the diagram)
+- [dolfin-development](https://github.com/NewcastleRSE/dolfin-flutter-development): This repository. DOLFIN Admin app 'dev' branch, created for NPEU team (right side of the diagram)
+- [dolfin-firebase](https://github.com/NewcastleRSE/dolfin-firebase): Includes Firebase Cloud Funcitons, Push Notifications and Database (top left of the diagram)
+- [dolfin-firebase](https://github.com/NewcastleRSE/dolfin-firebase-development): Development Firebase Cloud Funcitons, Push Notifications and Database (top right of the diagram)
 
 ## Project Diagram
 
@@ -45,8 +46,14 @@ The application uses [Flutter](https://flutter.dev/), which is written in [Dart]
 1. Install the following to get started on the project:
 
    * Flutter Framework (this also installs Dart for you, no need to do it explicitly): [Flutter MacOS](https://docs.flutter.dev/get-started/install/macos)
+     * **IMPORTANT NOTES POST INSTALL:**
+     * Must be downgraded to: **Flutter version 3.16.9 channel stable** 
+     * **Do NOT run** `$ dart fix`
+     * **Do NOT adjust** `pubspec.yaml` file! Unless you are keen on predicate logic
    * Xcode available on the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
    * Android Studio available from the [Jetbrains Toolbox App](https://www.jetbrains.com/toolbox-app/)
+
+   If you have an instalation of Flutter already, and installed this using homebrew, you may not be able to downgrade Flutter. If this is the case, remove your Flutter installation and install only the required version using these instructions for [installation](https://docs.flutter.dev/get-started/install/macos/mobile-ios?tab=download#add-flutter-to-your-path) and selecting the correct installation from [here](https://flutter-ko.dev/development/tools/sdk/releases?tab=macos).
 
 2. Determine whether you need Ruby (version manager) on a Mac
 
@@ -101,8 +108,8 @@ If you skip this step, you will have a hard time debugging what is going on with
 
 ### Android
 
-1. Download the relevant `google-services.json` file [from Firebase](https://console.firebase.google.com/project/dolfin-ec4ba/settings/general/android:uk.ac.ncl.rse.dolfin).    
-   To confirm you have the correct file, you will see `uk.ac.ncl.rse.dolfin` under `package-name`.
+1. Download the relevant `google-services.json` file [from Firebase](https://console.firebase.google.com/project/dolfin-ec4ba/settings/general/android:uk.ac.ncl.rse.dolfin.admin).    
+   To confirm you have the correct file, you will see `uk.ac.ncl.rse.dolfin.admin` under `package-name`.
 2. Copy the file to `dolfin-flutter/android/app/` directory
 
 Run the Android App for the first time
@@ -151,17 +158,23 @@ Run the iOS App for the first time
 6. Wait until it builds
 
 ### Building the iOS app to the App Store
-
 ```
-fastlane match development
-fastlane match appstore
-pod install
-bundle install
 flutter build ipa
-bundle exec fastlane beta
+```
+Following a successful build, ask Imre to sort the rest out.
+
+### Building the iOS app to the App Store [depricated]
+
+```
+# fastlane match development
+# fastlane match appstore
+# pod install
+# bundle install
+flutter build ipa
+# bundle exec fastlane beta
 ```
 
-### Regenerating the Icons (not sure if needed)
+### Regenerating the Icons (not needed unless there is an error)
 The base icon image is specified in `pubspec.yaml` and the relevant dependencies should be installed automatically.
 To regenerate the icons (for Android and iOS), edit the master image file and then use the following commands:
 
@@ -175,7 +188,8 @@ flutter pub run flutter_launcher_icons:main
 - [x] Initial Development  
 - [x] Minimum viable product  
 - [x] Feature-Complete
-- [x] Late 2023 Update
+- [x] Late 2023 Update by Imre
+- [x] Early 2024 Update by Imre
 
 ## Acknowledgements
 This work was funded by a grant from the UK Research Councils, EPSRC grant ref. EP/L012345/1, “Example project title, please update”.
