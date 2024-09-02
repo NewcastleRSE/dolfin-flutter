@@ -46,7 +46,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
         : TextEditingController(text: '');
     _recordDate = isEditMode ? widget.record!.date : DateTime.now();
     _childStudyID = isEditMode ? widget.record!.studyID : widget.child!.studyID;
-    _dropdownvalue = isEditMode ? widget.record!.numScoops : "1";
+    _dropdownvalue = isEditMode ? widget.record!.numScoops : "-";
   }
 
   @override
@@ -142,7 +142,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             height: 1.h,
           ),
           Text(
-            'When was this measurement recorded?',
+            'What date was this weight recorded?',
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
@@ -214,6 +214,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
                   });
                 },
                 items: <String>[
+                  '-',
                   '0',
                   '1',
                   '2',
@@ -240,7 +241,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             height: 4.h,
           ),
           Text(
-            "Getting low on supplement? If you have less than 30 sachets of supplement left, please contact the research team on dolfin@npeu.ox.ac.uk / 01865 617919",
+            "Getting low on supplement? Your local NHS clinical team will arrange a delivery to you, but if you have any concerns about this do get in touch with them.",
             style: Theme.of(context)
                 .textTheme
                 .headline1!
@@ -305,42 +306,57 @@ class _AddWeightPageState extends State<AddWeightPage> {
     );
   }
 
-
   _addWeight() {
-    if (_formKey.currentState!.validate()) {
-      WeightModel record = WeightModel(
-        date: FireStoreCrud().setTimeToMidday(_recordDate),
-        dateSubmitted: FireStoreCrud().setTimeToMidday(DateTime.now()),
-        weight: _weightcontroller.text,
-        child: widget.child!.id,
-        studyID: widget.child!.studyID,
-        numScoops: _dropdownvalue,
-        id: '',
+    if (_dropdownvalue == "-") {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Please enter the number of scoops of supplement."),
+          content: Text("If you are not giving any supplement to your baby at the moment, please enter 0."),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text("OK"),
+            ),
+          ],
+        ),
       );
-      isEditMode
-          ? FireStoreCrud().updateWeight(
-              docid: widget.record!.id,
-              date: FireStoreCrud().setTimeToMidday(record.date),
-              weight: record.weight,
-              numScoops: record.numScoops)
-          : FireStoreCrud().addWeight(record: record);
+    } else {
+      if (_formKey.currentState!.validate()) {
+        WeightModel record = WeightModel(
+          date: FireStoreCrud().setTimeToEarly(_recordDate),
+          dateSubmitted: FireStoreCrud().setTimeToEarly(DateTime.now()),
+          weight: _weightcontroller.text,
+          child: widget.child!.id,
+          studyID: widget.child!.studyID,
+          numScoops: _dropdownvalue,
+          id: '',
+        );
+        isEditMode
+            ? FireStoreCrud().updateWeight(
+            docid: widget.record!.id,
+            date: FireStoreCrud().setTimeToMidday(record.date),
+            weight: record.weight,
+            numScoops: record.numScoops)
+            : FireStoreCrud().addWeight(record: record);
 
-      showDialog<String>(
-          context: context,
-          barrierDismissible: false,
-          builder: (BuildContext context) => AlertDialog(
-                content: const Text(
-                    "Thank you. Your child's weight has been successfully recorded."),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.pop(context);
-                    },
-                    child: const Text('OK'),
-                  )
-                ],
-              ));
+        showDialog<String>(
+            context: context,
+            barrierDismissible: false,
+            builder: (BuildContext context) => AlertDialog(
+              content: const Text(
+                  "Thank you. Your child's weight has been successfully recorded."),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.pop(context);
+                  },
+                  child: const Text('OK'),
+                )
+              ],
+            ));
+      }
     }
   }
 
