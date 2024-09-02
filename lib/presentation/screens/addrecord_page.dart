@@ -83,7 +83,7 @@ class _AddRecordPageState extends State<AddRecordPage> {
         ? true
         : false;
 
-    _otherReasonVisible = (isEditMode) ? true : false;
+    _otherReasonVisible = isEditMode ?  widget.record!.reasons.contains('Other') : false;
 
     _ranOutVisible = (isEditMode) ? true : false;
 
@@ -207,6 +207,10 @@ class _AddRecordPageState extends State<AddRecordPage> {
                       reason3 = false;
                       reason4 = false;
                       reason5 = false;
+
+                      // remove other box and other text
+                      _otherReasonVisible = false;
+                      _reasoncontroller.clear();
                     });
                   },
                 ),
@@ -359,6 +363,9 @@ class _AddRecordPageState extends State<AddRecordPage> {
                               _reasons.add('Other');
                               _otherReasonVisible = true;
                             } else {
+                              // delete text from text box
+                              _reasoncontroller.clear();
+
                               _otherReasonVisible = false;
                               _reasons
                                   .removeWhere((element) => element == 'Other');
