@@ -1,4 +1,4 @@
-TODO: Add this back -- Ignored these for now, so it won't run after every push...
+
 on:
  push:
    branches:
