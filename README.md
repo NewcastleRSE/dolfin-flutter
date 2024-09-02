@@ -1,9 +1,10 @@
-&nbsp;
+
 
 <img align="left" width="100" height="100" src="./assets/icons/Icon-192.png" alt="app-logo">
 
-# DOLFIN App
-The Flutter-based app for the [DOLFIN Project](https://www.npeu.ox.ac.uk/dolfin).   
+# dolfin-flutter
+The Flutter-based app for the [DOLFIN Project](https://www.npeu.ox.ac.uk/dolfin).   Note, there is a dev version of the code in a seperate repo that bipasses the verification with NPEU's databases so that we can create users and have access to the app through a dev version. Currently this is only available for Android. It's a hastle, but development is probably best done in the dev app first to test before transferring updates to this one.
+
 
 ## About
 
