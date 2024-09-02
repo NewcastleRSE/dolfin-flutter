@@ -379,7 +379,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.5;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin.admin;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -517,7 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.5;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin.admin;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -549,7 +549,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.5;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin.admin;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.ncl.rse.dolfin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
