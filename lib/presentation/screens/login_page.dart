@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                           func: () {
                             if (connectivitycubit.state
                                 is ConnectivityOnlineState) {
-                              _authenticatewithemailandpass(context, authcubit);
+                               _authenticatewithemailandpass(context, authcubit);
                             } else {
                               MySnackBar.error(
                                   message:

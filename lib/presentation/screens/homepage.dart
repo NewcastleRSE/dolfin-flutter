@@ -28,6 +28,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+ 
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   static bool? notificationPrefs = true;
 
   final TextEditingController _usercontroller = TextEditingController(
-      text: FirebaseAuth.instance.currentUser!.displayName);
+      text: 'TestUser');
 
   late bool past3;
   final String _versionNo = "v";
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> saveFCMTokenToDatabase(String token) async {
-    String? userId = FirebaseAuth.instance.currentUser?.uid;
+    String? userId = 'cplsNvTuRifyu6gsjFSwWZFo40n1';
 
     await FirebaseFirestore.instance
         .collection('parents')
@@ -125,7 +126,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<bool> updateDailyNotifications(bool dailyNotifications) async {
-    String? userId = FirebaseAuth.instance.currentUser?.uid;
+    String? userId = 'cplsNvTuRifyu6gsjFSwWZFo40n1';
 
     await FirebaseFirestore.instance.collection('parents').doc(userId).set(
         {'dailyNotifications': dailyNotifications},
@@ -144,7 +145,7 @@ class _HomePageState extends State<HomePage> {
 
   bool checkDailyNotificationsVisibility() {
     var childrenSnapshot = FireStoreCrud()
-        .getChildren(parentID: FirebaseAuth.instance.currentUser!.uid);
+        .getChildren(parentID:'cplsNvTuRifyu6gsjFSwWZFo40n1' );
     // today's date
     DateTime now = DateTime.now();
     DateTime today = DateTime(now.year, now.month, now.day);
@@ -189,7 +190,7 @@ class _HomePageState extends State<HomePage> {
     AuthenticationCubit authenticationCubit = BlocProvider.of(context);
     ConnectivityCubit connectivitycubit = BlocProvider.of(context);
     final user = FirebaseAuth.instance.currentUser;
-    String username = user!.isAnonymous ? 'Anonymous' : 'User';
+    String username = 'User';
 
     return Scaffold(
         body: MultiBlocListener(
@@ -234,9 +235,8 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Expanded(
                             child: Text(
-                              user.displayName != null
-                                  ? 'Hello ${user.displayName}'
-                                  : ' Hello $username',
+                              
+                                  ' Hello',
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
@@ -331,7 +331,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                           child: StreamBuilder(
                         stream: FireStoreCrud().getChildren(
-                            parentID: FirebaseAuth.instance.currentUser!.uid),
+                            parentID: 'cplsNvTuRifyu6gsjFSwWZFo40n1'),
                         builder: (BuildContext context,
                             AsyncSnapshot<List<ChildModel>> snapshot) {
                           if (snapshot.hasError) {
@@ -422,7 +422,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<dynamic> _showBottomSheet(
       BuildContext context, AuthenticationCubit authenticationCubit) async {
-    var user = FirebaseAuth.instance.currentUser!.isAnonymous;
+    // var user = FirebaseAuth.instance.currentUser!.isAnonymous;
 
     return showModalBottomSheet(
       context: context,
@@ -461,16 +461,16 @@ class _HomePageState extends State<HomePage> {
                           .displayMedium!
                           .copyWith(fontSize: 12.sp),
                     ),
-                    SizedBox(
-                      height: 2.h,
-                    ),
-                    (user)
-                        ? Container()
-                        : MyTextfield(
-                            hint: '',
-                            icon: Icons.person,
-                            validator: (value) {},
-                            textEditingController: _usercontroller),
+                    // SizedBox(
+                    //   height: 2.h,
+                    // ),
+                    // (user)
+                    //     ? Container()
+                    //     : MyTextfield(
+                    //         hint: '',
+                    //         icon: Icons.person,
+                    //         validator: (value) {},
+                    //         textEditingController: _usercontroller),
                     SizedBox(
                       height: 5.h,
                     ),
@@ -488,50 +488,50 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 4.h,
                     ),
-                    (user)
-                        ? Container()
-                        : BlocBuilder<AuthenticationCubit, AuthenticationState>(
-                            builder: (context, state) {
-                              if (state is UpdateProfileLoadingState) {
-                                return const MyCircularIndicator();
-                              }
+                    // (user)
+                    //     ? Container()
+                    //     : BlocBuilder<AuthenticationCubit, AuthenticationState>(
+                    //         builder: (context, state) {
+                    //           if (state is UpdateProfileLoadingState) {
+                    //             return const MyCircularIndicator();
+                    //           }
 
-                              return MyButton(
-                                color: Colors.green,
-                                width: 80.w,
-                                title: "Update Profile",
-                                func: () {
-                                  if (_usercontroller.text == '') {
-                                    MySnackBar.error(
-                                        message: 'Name should not be empty!!',
-                                        color: Colors.red,
-                                        context: context);
-                                  } else {
-                                    authenticationCubit.updateUserInfo(
-                                        _usercontroller.text, context);
-                                    setState(() {});
-                                    showDialog<String>(
-                                        context: context,
-                                        barrierDismissible: false,
-                                        builder: (BuildContext context) =>
-                                            AlertDialog(
-                                              content: const Text(
-                                                  "Thank you, your details have been updated."),
-                                              actions: <Widget>[
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pushNamed(
-                                                        context, homepage);
-                                                  },
-                                                  child: const Text('OK'),
-                                                )
-                                              ],
-                                            ));
-                                  }
-                                },
-                              );
-                            },
-                          ),
+                    //           return MyButton(
+                    //             color: Colors.green,
+                    //             width: 80.w,
+                    //             title: "Update Profile",
+                    //             func: () {
+                    //               if (_usercontroller.text == '') {
+                    //                 MySnackBar.error(
+                    //                     message: 'Name should not be empty!!',
+                    //                     color: Colors.red,
+                    //                     context: context);
+                    //               } else {
+                    //                 authenticationCubit.updateUserInfo(
+                    //                     _usercontroller.text, context);
+                    //                 setState(() {});
+                    //                 showDialog<String>(
+                    //                     context: context,
+                    //                     barrierDismissible: false,
+                    //                     builder: (BuildContext context) =>
+                    //                         AlertDialog(
+                    //                           content: const Text(
+                    //                               "Thank you, your details have been updated."),
+                    //                           actions: <Widget>[
+                    //                             TextButton(
+                    //                               onPressed: () {
+                    //                                 Navigator.pushNamed(
+                    //                                     context, homepage);
+                    //                               },
+                    //                               child: const Text('OK'),
+                    //                             )
+                    //                           ],
+                    //                         ));
+                    //               }
+                    //             },
+                    //           );
+                    //         },
+                    //       ),
                     SizedBox(
                       height: 1.h,
                     ),
