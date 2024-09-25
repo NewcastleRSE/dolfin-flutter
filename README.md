@@ -160,20 +160,20 @@ Run the iOS App for the first time
 
 ### Building the app
 
-How to build and publish the DOLFIN Admin App:
+How to build and publish the DOLFIN App:
 
 #### Android
 Prerequisites (each time these have to pre-exist)
 1. In pubspec.yaml increment version: 0.2.7+207 (E.g. to version: 0.2.8+208)
 2. Run flutter run and compile it first to an Android emulator
-3. Put the private_key.pepk and upload-keystore.jks (available from RSE team Onedrive) files under dolfin-flutter-development/android/app/
+3. Put the private_key.pepk and upload-keystore.jks (available from RSE team Onedrive) files under dolfin-flutter/android/app/
 
 Building the app
-1. Open Android Studio at dolfin-flutter-development/android/
+1. Open Android Studio at dolfin-flutter/android/
 2. Mac Menu Bar: Build > Generate Signed App Bundle / APK
 3. Select “Android App Bundle”
 4. Module: android.app
-	Key store path: <your/path>/dolfin-flutter-development/android/app/upload-keystore.jks
+	Key store path: <your/path>/dolfin-flutter/android/app/upload-keystore.jks
 	Key store password: password
 	Key alias: key
 	Key password: password
@@ -183,7 +183,7 @@ Building the app
 
 Publishing the app
 1. Open Google Play Console
-https://play.google.com/console/u/0/developers/5129291954997355988/app/4972711060353377892/tracks/4700045890374304538
+
 2. “Create new release”
 3. Upload the app-release.aab file
 4. Publish from the Publishing Overview
@@ -211,9 +211,9 @@ Building the App
 
 Publishing the app
 
-1. Locate the .ipa file under /dolfin-flutter-development/build/ios/ipa
+1. Locate the .ipa file under /dolfin-flutter/build/ios/ipa
 2. Open Transporter app (https://apps.apple.com/gb/app/transporter/id1450874784?mt=12)
-3. Upload the uk.ac.ncl.rse.dolfin.admin.ipa file
+3. Upload the uk.ac.ncl.rse.dolfin.ipa file
 4. Release it on Testflight
 
 
