@@ -45,7 +45,7 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
   static var currentdate = DateTime.now();
 
   final TextEditingController _usercontroller = TextEditingController(
-      text: FirebaseAuth.instance.currentUser!.displayName);
+      text: 'test');
 
   @override
   void initState() {
@@ -80,8 +80,8 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
   Widget build(BuildContext context) {
     AuthenticationCubit authenticationCubit = BlocProvider.of(context);
     ConnectivityCubit connectivitycubit = BlocProvider.of(context);
-    final user = FirebaseAuth.instance.currentUser;
-    String username = user!.isAnonymous ? 'Anonymous' : 'User';
+    // final user = FirebaseAuth.instance.currentUser;
+    String username =  'User';
 
     DateTime today = DateTime.now();
     DateTime lastWeek = today.subtract(const Duration(days: 7));

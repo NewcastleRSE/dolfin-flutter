@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> saveFCMTokenToDatabase(String token) async {
-    String? userId = 'cplsNvTuRifyu6gsjFSwWZFo40n1';
+    String? userId = 'Do6SYqf1lySEA0hAEiRn8h1N3eP2';
 
     await FirebaseFirestore.instance
         .collection('parents')
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<bool> updateDailyNotifications(bool dailyNotifications) async {
-    String? userId = 'cplsNvTuRifyu6gsjFSwWZFo40n1';
+    String? userId = 'Do6SYqf1lySEA0hAEiRn8h1N3eP2';
 
     await FirebaseFirestore.instance.collection('parents').doc(userId).set(
         {'dailyNotifications': dailyNotifications},
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
 
   bool checkDailyNotificationsVisibility() {
     var childrenSnapshot = FireStoreCrud()
-        .getChildren(parentID:'cplsNvTuRifyu6gsjFSwWZFo40n1' );
+        .getChildren(parentID:'Do6SYqf1lySEA0hAEiRn8h1N3eP2' );
     // today's date
     DateTime now = DateTime.now();
     DateTime today = DateTime(now.year, now.month, now.day);
@@ -331,7 +331,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                           child: StreamBuilder(
                         stream: FireStoreCrud().getChildren(
-                            parentID: 'cplsNvTuRifyu6gsjFSwWZFo40n1'),
+                            parentID: 'Do6SYqf1lySEA0hAEiRn8h1N3eP2'),
                         builder: (BuildContext context,
                             AsyncSnapshot<List<ChildModel>> snapshot) {
                           if (snapshot.hasError) {
