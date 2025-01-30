@@ -92,7 +92,6 @@ class _LoginPageState extends State<LoginPage> {
                           'Welcome',
                           style:
                               Theme.of(context).textTheme.displayLarge?.copyWith(
-                                    fontSize: 20.sp,
                                     letterSpacing: 2,
                                   ),
                         ),
@@ -105,7 +104,6 @@ class _LoginPageState extends State<LoginPage> {
                               .textTheme
                               .titleMedium
                               ?.copyWith(
-                                  fontSize: 12.sp,
                                   letterSpacing: 2,
                                   fontWeight: FontWeight.bold),
                         ),
@@ -168,12 +166,9 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Text(
                               'Don\'t have an Account?',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium
-                                  ?.copyWith(
-                                      fontSize: 8.sp,
-                                      fontWeight: FontWeight.bold),
+                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             const SizedBox(
                               width: 5,
@@ -188,7 +183,6 @@ class _LoginPageState extends State<LoginPage> {
                                     .textTheme
                                     .displayLarge
                                     ?.copyWith(
-                                      fontSize: 9.sp,
                                       color: AppColours.dark_blue,
                                     ),
                               ),
@@ -211,7 +205,6 @@ class _LoginPageState extends State<LoginPage> {
                                     .textTheme
                                     .displayLarge
                                     ?.copyWith(
-                                      fontSize: 9.sp,
                                       color: AppColours.dark_blue,
                                     ),
                               ),

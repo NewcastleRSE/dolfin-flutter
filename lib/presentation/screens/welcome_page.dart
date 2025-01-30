@@ -69,7 +69,6 @@ class WelcomePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             letterSpacing: 3,
-                            fontSize: 10.sp,
                             wordSpacing: 2,
                           ),
                     ),

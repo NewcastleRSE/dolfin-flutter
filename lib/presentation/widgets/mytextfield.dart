@@ -40,10 +40,11 @@ class MyTextfield extends StatelessWidget {
       keyboardType: keyboardtype,
       onTap: readonly ? ontap : null,
       controller: textEditingController,
-      style: Theme.of(context).textTheme.displayLarge?.copyWith(
-            fontSize: 9.sp,
-            color: AppColours.black,
-          ),
+      style: TextStyle(
+        fontSize: 16.sp,
+        color: AppColours.black,
+        fontFamily: "Montserrat",
+      ),
       decoration: InputDecoration(
           fillColor: Colors.grey.shade200,
           filled: true,
@@ -55,24 +56,25 @@ class MyTextfield extends StatelessWidget {
                 width: 0,
               )),
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.3.h),
-          hintStyle: Theme.of(context).textTheme.displayLarge?.copyWith(
-                fontSize: 9.sp,
-                color: AppColours.dark_blue,
-              ),
+          EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.3.h),
+          hintStyle: TextStyle(
+            fontSize: 16.sp,
+            color: AppColours.dark_blue,
+            fontFamily: "Montserrat",
+          ),
           prefixIcon: showicon
               ? Icon(
-                  icon,
-                  size: 22,
-                  color: AppColours.dark_blue,
-                )
+            icon,
+            size: 22.sp,  // Made icon size responsive
+            color: AppColours.dark_blue,
+          )
               : null,
           suffixIcon: readonly
               ? Icon(
-                  icon,
-                  size: 22,
-                  color: AppColours.dark_blue,
-                )
+            icon,
+            size: 22.sp,  // Made icon size responsive
+            color: AppColours.dark_blue,
+          )
               : null),
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,

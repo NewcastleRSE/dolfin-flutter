@@ -281,14 +281,14 @@ class _HomePageState extends State<HomePage> {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(fontSize: 10.sp),
+                              .copyWith(fontSize: 14.sp),
                           children: [
                           TextSpan(
                           text: 'https://www.npeu.ox.ac.uk/dolfin/parents/resources',
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(fontSize: 10.sp, color: AppColours.light_blue),
+                              .copyWith(fontSize: 14.sp, color: AppColours.light_blue),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               launch(

@@ -134,7 +134,7 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
                               style: Theme.of(context)
                                   .textTheme
                                   .displayLarge!
-                                  .copyWith(fontSize: 15.sp),
+                                  .copyWith(fontSize: 18.sp),
                             ),
                           ),
                           InkWell(
@@ -182,7 +182,7 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
                                 style: Theme.of(context)
                                     .textTheme
                                     .displayLarge!
-                                    .copyWith(fontSize: 13.sp),
+                                    .copyWith(fontSize: 16.sp),
                               )),
                           const Spacer(),
                           ElevatedButton(
