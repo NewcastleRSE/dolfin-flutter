@@ -192,9 +192,8 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
                             },
                             child: Icon(Icons.edit, color: Colors.white),
                             style: ElevatedButton.styleFrom(
-                                shape: CircleBorder(),
-                                padding: EdgeInsets.all(12),
-                                primary: AppColours.light_blue),
+                                shape: CircleBorder(), backgroundColor: AppColours.light_blue,
+                                padding: EdgeInsets.all(12)),
                           ),
                           ElevatedButton(
                             onPressed: () {
@@ -204,9 +203,8 @@ class _ChildInfoPageState extends State<ChildInfoPage> {
                             child: Icon(Icons.add_chart_rounded,
                                 color: Colors.white),
                             style: ElevatedButton.styleFrom(
-                                shape: CircleBorder(),
-                                padding: EdgeInsets.all(12),
-                                primary: AppColours.light_blue),
+                                shape: CircleBorder(), backgroundColor: AppColours.light_blue,
+                                padding: EdgeInsets.all(12)),
                           ),
                           HospitalAdmissionWidget(child: widget.child)
                         ],
@@ -542,9 +540,8 @@ class HospitalAdmissionWidget extends StatelessWidget {
       ),
       child: Icon(Icons.domain_add_outlined, color: Colors.white),
       style: ElevatedButton.styleFrom(
-          shape: CircleBorder(),
-          padding: EdgeInsets.all(12),
-          primary: AppColours.light_blue),
+          shape: CircleBorder(), backgroundColor: AppColours.light_blue,
+          padding: EdgeInsets.all(12)),
     );
   }
 }

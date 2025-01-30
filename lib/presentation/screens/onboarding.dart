@@ -89,7 +89,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         textAlign: TextAlign.left,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline1
+                                            .displayLarge
                                             ?.copyWith(
                                               fontSize: 13.sp,
                                               color: cubit.currentindex != 0
@@ -123,7 +123,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         textAlign: TextAlign.right,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline1
+                                            .displayLarge
                                             ?.copyWith(
                                               fontSize: 13.sp,
                                               color: cubit.currentindex !=
@@ -209,7 +209,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         ),
         Text(
           '',
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox()
       ],

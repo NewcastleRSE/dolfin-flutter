@@ -40,7 +40,7 @@ class MyTextfield extends StatelessWidget {
       keyboardType: keyboardtype,
       onTap: readonly ? ontap : null,
       controller: textEditingController,
-      style: Theme.of(context).textTheme.headline1?.copyWith(
+      style: Theme.of(context).textTheme.displayLarge?.copyWith(
             fontSize: 9.sp,
             color: AppColours.black,
           ),
@@ -56,7 +56,7 @@ class MyTextfield extends StatelessWidget {
               )),
           contentPadding:
               EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.3.h),
-          hintStyle: Theme.of(context).textTheme.headline1?.copyWith(
+          hintStyle: Theme.of(context).textTheme.displayLarge?.copyWith(
                 fontSize: 9.sp,
                 color: AppColours.dark_blue,
               ),

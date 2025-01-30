@@ -36,7 +36,7 @@ class OnBoardingItem extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
           SizedBox(
             height: 2.h,
@@ -45,7 +45,7 @@ class OnBoardingItem extends StatelessWidget {
             description,
             maxLines: 3,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ],
       ),

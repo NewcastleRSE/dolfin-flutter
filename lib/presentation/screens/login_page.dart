@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           'Welcome',
                           style:
-                              Theme.of(context).textTheme.headline1?.copyWith(
+                              Theme.of(context).textTheme.displayLarge?.copyWith(
                                     fontSize: 20.sp,
                                     letterSpacing: 2,
                                   ),
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           'Please Sign In To Continue',
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle1
+                              .titleMedium
                               ?.copyWith(
                                   fontSize: 12.sp,
                                   letterSpacing: 2,
@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                               'Don\'t have an Account?',
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1
+                                  .titleMedium
                                   ?.copyWith(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.bold),
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'Sign Up',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline1
+                                    .displayLarge
                                     ?.copyWith(
                                       fontSize: 9.sp,
                                       color: AppColours.dark_blue,
@@ -209,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'Forgot password?',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline1
+                                    .displayLarge
                                     ?.copyWith(
                                       fontSize: 9.sp,
                                       color: AppColours.dark_blue,

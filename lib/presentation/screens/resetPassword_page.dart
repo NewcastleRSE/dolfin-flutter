@@ -90,7 +90,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           'Please provide your email and you will be sent a link to reset your password.',
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle1
+                              .titleMedium
                               ?.copyWith(
                                   fontSize: 12.sp,
                                   letterSpacing: 2,

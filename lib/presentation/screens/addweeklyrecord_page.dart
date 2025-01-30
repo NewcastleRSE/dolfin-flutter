@@ -156,7 +156,7 @@ class _AddWeeklyRecordPageState extends State<AddWeeklyRecordPage> {
             "Baby's Date of Birth",
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -179,7 +179,7 @@ class _AddWeeklyRecordPageState extends State<AddWeeklyRecordPage> {
             'Supplement',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -505,7 +505,7 @@ _reasoncontroller.clear();
                     "If you have run out of supplement, please contact the research team at dolfin@npeu.ox.ac.uk / 01865 617919",
                     style: Theme.of(context)
                         .textTheme
-                        .headline1!
+                        .displayLarge!
                         .copyWith(fontSize: 14.sp, color: AppColours.red),
                   ),
                 ),
@@ -522,14 +522,14 @@ _reasoncontroller.clear();
                   text: 'The DOLFIN supplement dosing chart can be seen at ',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp),
                 ),
                 TextSpan(
                   text: 'https://www.npeu.ox.ac.uk/dolfin/parents/resources',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp, color: AppColours.light_blue),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
@@ -541,7 +541,7 @@ _reasoncontroller.clear();
                   text: ' and is also included in your Parent Discharge Pack.',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp),
                 ),
               ],
@@ -554,7 +554,7 @@ _reasoncontroller.clear();
             "Thank you for completing this weekly supplement check. Don’t forget to complete the form again on the same day next week; we will send you a reminder to do this.",
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -637,7 +637,7 @@ _reasoncontroller.clear();
         Text(
           isEditMode ? 'Edit Record' : 'Weekly Supplement Check',
           style:
-              Theme.of(context).textTheme.headline1!.copyWith(fontSize: 14.sp),
+              Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 14.sp),
         ),
         const SizedBox()
       ],

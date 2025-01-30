@@ -102,7 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         Text(
                           'Sign Up',
                           style:
-                              Theme.of(context).textTheme.headline1?.copyWith(
+                              Theme.of(context).textTheme.displayLarge?.copyWith(
                                     fontSize: 20.sp,
                                     letterSpacing: 2,
                                   ),
@@ -115,7 +115,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ' you originally signed up to the trial with.',
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle1
+                              .titleMedium
                               ?.copyWith(
                                   fontSize: 12.sp,
                                   letterSpacing: 2,
@@ -177,8 +177,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               _signupewithemailandpass(context, authcubit);
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: AppColours.light_blue, // background
-                              onPrimary: AppColours.white,
+                              foregroundColor: AppColours.white, backgroundColor: AppColours.light_blue,
                               shape: RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(200),
                               ),
@@ -196,7 +195,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               'Already have an Account ?',
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle1
+                                  .titleMedium
                                   ?.copyWith(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.bold),
@@ -212,7 +211,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 'Login',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline1
+                                    .displayLarge
                                     ?.copyWith(
                                       fontSize: 9.sp,
                                       color: AppColours.dark_blue,
