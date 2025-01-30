@@ -68,3 +68,6 @@ keys/
 ios/gc_keys.json
 ios/Runner.app.*.zip
 ios/Runner.ipa
+
+# Java version
+.jvmconfig
