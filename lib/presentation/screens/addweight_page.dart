@@ -97,7 +97,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             'Weight',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -135,7 +135,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             'Date',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -170,7 +170,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             'Supplement',
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -180,7 +180,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             'How many scoops of supplement per day are you giving your baby at the moment?',
             style: Theme.of(context)
                 .textTheme
-                .headline2!
+                .displayMedium!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -193,7 +193,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
                 "Please select a value:",
                 style: Theme.of(context)
                     .textTheme
-                    .headline2!
+                    .displayMedium!
                     .copyWith(fontSize: 14.sp),
               ),
               SizedBox(
@@ -244,7 +244,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
             "Getting low on supplement? Your local NHS clinical team will arrange a delivery to you, but if you have any concerns about this do get in touch with them.",
             style: Theme.of(context)
                 .textTheme
-                .headline1!
+                .displayLarge!
                 .copyWith(fontSize: 14.sp),
           ),
           SizedBox(
@@ -257,14 +257,14 @@ class _AddWeightPageState extends State<AddWeightPage> {
                   text: 'The DOLFIN supplement dosing chart can be seen at ',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp),
                 ),
                 TextSpan(
                   text: 'https://www.npeu.ox.ac.uk/dolfin/parents/resources',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp, color: AppColours.light_blue),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
@@ -276,7 +276,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
                   text: ' and is also included in your Parent Discharge Pack.',
                   style: Theme.of(context)
                       .textTheme
-                      .headline1!
+                      .displayLarge!
                       .copyWith(fontSize: 14.sp),
                 ),
               ],
@@ -389,7 +389,7 @@ class _AddWeightPageState extends State<AddWeightPage> {
         Text(
           isEditMode ? 'Edit Weight Record' : 'Baby Weight Check',
           style:
-              Theme.of(context).textTheme.headline1!.copyWith(fontSize: 14.sp),
+              Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 14.sp),
         ),
         const SizedBox()
       ],

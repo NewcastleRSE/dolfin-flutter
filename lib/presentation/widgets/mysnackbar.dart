@@ -19,8 +19,8 @@ class MySnackBar extends Flushbar {
       messageText: Center(
         child: Text(
           message,
-          style: Theme.of(context).textTheme.headline1!.copyWith(
-                fontSize: 11.sp,
+          style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                fontSize: 14.sp,
                 color: AppColours.white,
               ),
         ),

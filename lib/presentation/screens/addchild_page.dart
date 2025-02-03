@@ -368,7 +368,7 @@ print(details);
         Text(
           'Were you recruited to the study before hospital discharge?',
           style:
-              Theme.of(context).textTheme.headline1!.copyWith(fontSize: 14.sp),
+              Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 14.sp),
         ),
         SizedBox(
           height: 2.h,
@@ -421,7 +421,7 @@ print(details);
         Text(
           isEditMode ? 'Edit Child Details' : 'Add a Child',
           style:
-              Theme.of(context).textTheme.headline1!.copyWith(fontSize: 14.sp),
+              Theme.of(context).textTheme.displayLarge!.copyWith(fontSize: 14.sp),
         ),
         const SizedBox()
       ],

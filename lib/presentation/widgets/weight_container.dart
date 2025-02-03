@@ -41,7 +41,7 @@ class WeightContainer extends StatelessWidget {
               Text(
                 DateFormat('dd-MM-yyyy').format(record.date),
                 textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.headline1!.copyWith(
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       color: Colors.white,
                       fontSize: 15.sp,
                     ),
@@ -49,7 +49,7 @@ class WeightContainer extends StatelessWidget {
               Text(
                 "TEXT GOES HERE",
                 textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.headline2!.copyWith(
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
                       color: Colors.white,
                       fontSize: 15.sp,
                     ),
@@ -73,9 +73,8 @@ class WeightContainer extends StatelessWidget {
           },
           child: Icon(Icons.edit, color: Colors.white),
           style: ElevatedButton.styleFrom(
-              shape: CircleBorder(),
-              padding: EdgeInsets.all(12),
-              primary: AppColours.light_blue),
+              shape: CircleBorder(), backgroundColor: AppColours.light_blue,
+              padding: EdgeInsets.all(12)),
         )
       ]);
     } else if (record.id == "0") {
@@ -87,9 +86,8 @@ class WeightContainer extends StatelessWidget {
           },
           child: Icon(Icons.add, color: Colors.white),
           style: ElevatedButton.styleFrom(
-              shape: CircleBorder(),
-              padding: EdgeInsets.all(12),
-              primary: AppColours.light_blue),
+              shape: CircleBorder(), backgroundColor: AppColours.light_blue,
+              padding: EdgeInsets.all(12)),
         )
       ]);
     } else

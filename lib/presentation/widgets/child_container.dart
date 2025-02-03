@@ -37,7 +37,7 @@ class ChildContainer extends StatelessWidget {
               name,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.headline1!.copyWith(
+              style: Theme.of(context).textTheme.displayLarge!.copyWith(
                     color: Colors.white,
                     fontSize: 15.sp,
                   ),

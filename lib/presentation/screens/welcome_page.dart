@@ -58,7 +58,7 @@ class WelcomePage extends StatelessWidget {
                       'Welcome',
                       style: Theme.of(context)
                           .textTheme
-                          .headline1
+                          .displayLarge
                           ?.copyWith(letterSpacing: 3),
                     ),
                     SizedBox(
@@ -67,9 +67,8 @@ class WelcomePage extends StatelessWidget {
                     Text(
                       'Welcome to the DOLFIN App',
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             letterSpacing: 3,
-                            fontSize: 10.sp,
                             wordSpacing: 2,
                           ),
                     ),

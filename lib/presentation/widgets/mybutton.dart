@@ -3,13 +3,13 @@ import 'package:sizer/sizer.dart';
 import 'package:dolfin_flutter/shared/styles/colours.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton(
-      {Key? key,
-      required this.color,
-      required this.width,
-      required this.title,
-      required this.func})
-      : super(key: key);
+  const MyButton({
+    Key? key,
+    required this.color,
+    required this.width,
+    required this.title,
+    required this.func,
+  }) : super(key: key);
 
   final Color color;
   final double width;
@@ -29,10 +29,10 @@ class MyButton extends StatelessWidget {
         onPressed: func,
         child: Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .headline1
-              ?.copyWith(fontSize: 11.sp, color: AppColours.white),
+          style: Theme.of(context).textTheme.displayLarge?.copyWith(
+            fontSize: 16.sp,
+            color: AppColours.white,
+          ),
         ),
       ),
     );
